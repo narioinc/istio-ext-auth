@@ -1,2 +1,2 @@
 # istio-ext-auth
-An example of how to setup ext auth using a simple nodejs authenticator
+An example of how to setup Istio External authentication using a simple nodejs authenticator

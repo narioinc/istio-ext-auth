@@ -1,0 +1,12 @@
+apiVersion: security.istio.io/v1beta1
+kind: RequestAuthentication
+metadata:
+  name: "jwt-example"
+spec:
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: user-api
+  jwtRules:
+  - issuer: "http://127.0.0.1:8080/realms/platform"
+#    jwksUri: "https://raw.githubusercontent.com/istio/istio/release-1.15/security/tools/jwt/samples/jwks.json"
+    jwksUri: "http://keycloak.platform:8080/realms/platform/protocol/openid-connect/certs"

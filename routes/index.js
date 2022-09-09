@@ -1,6 +1,16 @@
 var express = require('express');
 var router = express.Router();
 
+router.get('/live', function(req, res, next) {
+  res.status(200)
+  res.json({})
+});
+
+router.get('/ready', function(req, res, next) {
+  res.status(200)
+  res.json({})
+});
+
 /* GET home page. */
 router.get('/', function(req, res, next) {
   console.log(req.headers)
@@ -13,5 +23,6 @@ router.get('/', function(req, res, next) {
     res.json({"message": "failed to authenticate"})
   }
 });
+
 
 module.exports = router;

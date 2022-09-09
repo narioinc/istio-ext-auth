@@ -4,7 +4,8 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
-const port = 3080
+var healthRouter = require('./routes/health');
+const port = 80
 
 var app = express();
 
@@ -13,7 +14,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
-app.use('/*', indexRouter);
+app.use('/', indexRouter);
+app.use('/health', healthRouter)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

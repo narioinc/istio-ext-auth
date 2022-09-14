@@ -5,7 +5,7 @@ metadata:
 spec:
   selector:
     matchLabels:
-      app.kubernetes.io/name: user-api
+      app: httpbin
   action: CUSTOM
   provider:
     # The provider name must match the extension provider defined in the mesh config.
@@ -15,4 +15,4 @@ spec:
   # The rules specify when to trigger the external authorizer.
   - to:
     - operation:
-        paths: ["/*"]
+        paths: ["*/get"]

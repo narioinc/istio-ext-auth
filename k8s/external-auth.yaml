@@ -13,6 +13,6 @@ spec:
     name: sample-ext-authz-http
   rules:
   # The rules specify when to trigger the external authorizer.
-  - to:
+  - to: 
     - operation:
-        paths: ["*/get"]
+        paths: ["*/headers"]

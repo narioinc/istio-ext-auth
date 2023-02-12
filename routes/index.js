@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var jwtdecode = require('jwt-decode')
+const { v4: uuidv4 } = require('uuid');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -31,6 +32,7 @@ router.get('/', function(req, res, next) {
     res.status(200)
     res.set("x-auth-handler", "istio-ext-auth")
     res.set("x-auth-response", "200")
+    res.set("x-auth-sessionid", uuidv4())
     res.json({})
   }
   else{

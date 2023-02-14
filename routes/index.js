@@ -33,6 +33,7 @@ router.get('/', function(req, res, next) {
     res.set("x-auth-handler", "istio-ext-auth")
     res.set("x-auth-response", "200")
     res.set("x-auth-sessionid", uuidv4())
+    res.set("x-auth-app-token", uuidv4())
     res.json({})
   }
   else{
